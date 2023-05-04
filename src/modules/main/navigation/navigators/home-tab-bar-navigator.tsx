@@ -62,14 +62,14 @@ export const HomeTabBarNavigator = () => {
 
 const styles = StyleSheet.create({
   customBottomTab: {
-   // paddingTop: 25,
+    paddingTop: 25,
   //  borderWidth:2,
   //  borderColor:'black',
     justifyContent: 'center',
     alignItems: 'center',
     height: 50,
     backgroundColor: '#FEEDD8',
-    borderRadius: 16,
+    borderRadius: 20,
     width: '80%',
     position: 'absolute',
     marginBottom: 20,

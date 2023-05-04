@@ -1,7 +1,7 @@
 export enum AuthRoutes {
-  Page1 = 'Page1',
+  Login = 'Login',
 }
 
 export type AuthRouteProps = {
-  [AuthRoutes.Page1]: undefined;
+  [AuthRoutes.Login]: undefined;
 };

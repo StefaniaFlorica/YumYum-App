@@ -5,6 +5,7 @@ import {
 } from '../routes/main-routes';
 import {HomeTabBarNavigator} from './home-tab-bar-navigator';
 import {Image, Pressable, StyleSheet} from 'react-native';
+import { EditUserScreen } from '../../screens/editUser';
 
 const Stack = createStackNavigator<MainNavigatorRouteProps>();
 
@@ -24,6 +25,15 @@ export const MainNavigator = () => {
       <Stack.Screen
         name={MainNavigatorRoutes.Tabs}
         component={HomeTabBarNavigator}></Stack.Screen>
+      <Stack.Screen
+        name={MainNavigatorRoutes.Edit}
+        component={EditUserScreen}
+        options={()=>({
+          // headerLeft: ()=> (
+            
+          // )
+        })}></Stack.Screen>
+        
     </Stack.Navigator>
   );
 };
@@ -31,7 +41,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 60,
     resizeMode: 'contain',
-    tintColor: '#FFC173'
+    tintColor: '#FFC173',
   },
   headerContainer: {
     alignItems: 'center',
@@ -42,6 +52,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#FEEDD8',
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
-    borderBottomWidth:2
+    borderBottomWidth: 2,
   },
 });

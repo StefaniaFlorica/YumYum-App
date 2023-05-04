@@ -1,7 +1,9 @@
 export enum MainNavigatorRoutes {
-    Tabs = "Tabs"
+    Tabs = "Tabs",
+    Edit= "Edit",
 }
 
 export type MainNavigatorRouteProps = {
-    [MainNavigatorRoutes.Tabs]:undefined
+    [MainNavigatorRoutes.Tabs]:undefined;
+    [MainNavigatorRoutes.Edit]:undefined
 }
