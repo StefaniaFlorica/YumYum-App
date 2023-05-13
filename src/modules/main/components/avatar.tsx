@@ -11,7 +11,7 @@ export const Avatar = (props: Props) => {
     <View style={styles.main}>
       {!props.user?.profilePic ? (
         <Text style={styles.text}>
-          {props.user?.username.toUpperCase().slice(0, 2)}
+          {props.user?.username?.toUpperCase().slice(0, 2)}
         </Text>
       ) : (
         <Image style={styles.image} source={{uri: props.user?.profilePic}} />
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     borderRadius: 80,
-    borderWidth:1,
+    borderWidth: 1,
   },
   main: {
     justifyContent: 'center',
@@ -35,6 +35,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightblue',
     borderRadius: 80,
     borderWidth: 1,
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 0,
+      height: 6,
+    },
+    shadowOpacity: 0.39,
+    shadowRadius: 8.3,
+
+    elevation: 13,
   },
   text: {
     fontSize: 50,

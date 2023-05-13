@@ -5,7 +5,9 @@ import {
 } from '../routes/main-routes';
 import {HomeTabBarNavigator} from './home-tab-bar-navigator';
 import {Image, Pressable, StyleSheet} from 'react-native';
-import { EditUserScreen } from '../../screens/editUser';
+import {EditUserScreen} from '../../screens/editUser';
+import {RecipeDetailsScreen} from '../../screens/details';
+import { EditInterestsScreen } from '../../screens/editInterests';
 
 const Stack = createStackNavigator<MainNavigatorRouteProps>();
 
@@ -28,12 +30,16 @@ export const MainNavigator = () => {
       <Stack.Screen
         name={MainNavigatorRoutes.Edit}
         component={EditUserScreen}
-        options={()=>({
+        options={() => ({
           // headerLeft: ()=> (
-            
           // )
         })}></Stack.Screen>
-        
+      <Stack.Screen
+        name={MainNavigatorRoutes.RecipeDetails}
+        component={RecipeDetailsScreen}></Stack.Screen>
+      <Stack.Screen
+        name={MainNavigatorRoutes.Interests}
+        component={EditInterestsScreen}></Stack.Screen>
     </Stack.Navigator>
   );
 };
@@ -41,7 +47,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 60,
     resizeMode: 'contain',
-    tintColor: '#FFC173',
+    tintColor: '#f2732e',
   },
   headerContainer: {
     alignItems: 'center',
@@ -49,7 +55,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   header: {
-    backgroundColor: '#FEEDD8',
+    backgroundColor: '#fefefe',
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
     borderBottomWidth: 2,

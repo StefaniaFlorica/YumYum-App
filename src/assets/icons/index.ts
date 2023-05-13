@@ -30,3 +30,10 @@ export {HeartIcon}
 
 import HeartFilledIcon from './heart-filled.svg'
 export {HeartFilledIcon}
+
+import FilterIcon from './funnel.svg'
+export {FilterIcon}
+
+import CloseIcon from './close-outline.svg'
+export {CloseIcon}
+

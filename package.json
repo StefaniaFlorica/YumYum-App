@@ -25,6 +25,7 @@
     "react-native-svg": "^13.9.0",
     "react-native-svg-transformer": "^1.0.0",
     "react-native-tab-view": "^3.5.1",
+    "use-debounce": "^9.0.4",
     "zustand": "^4.3.7"
   },
   "devDependencies": {

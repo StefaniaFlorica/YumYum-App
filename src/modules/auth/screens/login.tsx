@@ -22,11 +22,8 @@ export const LoginScreen = () => {
       (item: User) => item.email === email && item.password === password,
     );
     if (user) {
-      console.log(user);
       setCurrentUser(user);
-      showErrorAlert('Success', `User ${user.username} found!`);
     } else {
-      console.log(users);
       
       showErrorAlert('Error', 'User not found!');
     }

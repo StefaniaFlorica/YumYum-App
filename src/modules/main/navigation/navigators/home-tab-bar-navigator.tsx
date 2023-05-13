@@ -27,7 +27,7 @@ export const HomeTabBarNavigator = () => {
               <HomeIcon
                 width={focused ? 30 : 25}
                 height={focused ? 30 : 25}
-                fill={focused ? 'black' : '#FFC173'}
+                fill={focused ? 'black' : '#f2732e'}
               />
             ),
           }}></Tab.Screen>
@@ -39,7 +39,7 @@ export const HomeTabBarNavigator = () => {
               <HeartIcon
                 width={focused ? 30 : 25}
                 height={focused ? 30 : 25}
-                fill={focused ? 'black' : '#FFC173'}
+                fill={focused ? 'black' : '#f2732e'}
               />
             ),
           }}
@@ -52,7 +52,7 @@ export const HomeTabBarNavigator = () => {
               <AccountIcon
                 width={focused ? 30 : 25}
                 height={focused ? 30 : 25}
-                fill={focused ? 'black' : '#FFC173'}
+                fill={focused ? 'black' : '#f2732e'}
               />
             ),
           }}></Tab.Screen>
@@ -62,18 +62,15 @@ export const HomeTabBarNavigator = () => {
 
 const styles = StyleSheet.create({
   customBottomTab: {
-    paddingTop: 25,
-  //  borderWidth:2,
-  //  borderColor:'black',
     justifyContent: 'center',
     alignItems: 'center',
     height: 50,
-    backgroundColor: '#FEEDD8',
-    borderRadius: 20,
-    width: '80%',
+    backgroundColor: 'white',
+    borderRadius: 30,
+    width: '70%',
     position: 'absolute',
     marginBottom: 20,
-    marginHorizontal: 35,
+    marginHorizontal:60,
     alignContent: 'center',
     shadowColor: '#000',
     shadowOffset: {

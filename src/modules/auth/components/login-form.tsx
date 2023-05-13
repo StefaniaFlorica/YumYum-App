@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 export const LoginForm = (props: Props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const yumYum = require('../../../assets/images/yum-yum.png');
   const onPress = () => {
     props.onLogin(email, password);
   };
@@ -22,28 +22,75 @@ export const LoginForm = (props: Props) => {
   };
   return (
     <View style={styles.main}>
-      <TextInput
-        placeholder="email"
-        keyboardType="email-address"
-        onChangeText={changeEmail}
-        autoCapitalize="none"
-        style={styles.input}></TextInput>
-      <TextInput
-        placeholder="password"
-        autoCapitalize="none"
-        secureTextEntry={true}
-        onChangeText={changePassword}
-        style={styles.input}></TextInput>
-      <Pressable style={styles.button} onPress={onPress}>
-        <Text style={styles.text}>Log in</Text>
-      </Pressable>
+      <View style={styles.header}>
+        <Text style={styles.title}>Hi,</Text>
+        <Text style={[styles.title, {fontSize: 40, textAlign: 'right'}]}>
+          welcome to
+        </Text>
+        <View style={{alignItems: 'center', width: '100%'}}>
+          <Image source={yumYum} style={styles.image} />
+        </View>
+      </View>
+      <View style={styles.inputs}>
+        <View style={styles.inputContainter}>
+          <TextInput
+            placeholder="email"
+            keyboardType="email-address"
+            onChangeText={changeEmail}
+            autoCapitalize="none"
+            style={styles.input}></TextInput>
+          <TextInput
+            placeholder="password"
+            autoCapitalize="none"
+            secureTextEntry={true}
+            onChangeText={changePassword}
+            style={styles.input}></TextInput>
+          <Pressable style={styles.button} onPress={onPress}>
+            <Text style={styles.text}>Log in</Text>
+          </Pressable>
+        </View>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  inputContainter: {
+    gap: 20,
+  },
+  image: {
+    width: 200,
+    height: 200,
+    resizeMode: 'contain',
+    tintColor: 'white',
+  },
+  title: {
+    color: '#f5f7f9',
+    fontSize: 60,
+    fontWeight: 'bold',
+  },
+  inputs: {
+    flex: 1,
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    borderTopLeftRadius: 60,
+    borderTopRightRadius: 60,
+    backgroundColor: '#f5f7f9',
+    width: '100%',
+    paddingTop:30
+  },
+  header: {
+    paddingLeft: 20,
+    paddingBottom:30,
+    flex: 1,
+    height: '100%',
+    width: '100%',
+    backgroundColor: '#f2732e',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+  },
   main: {
-    backgroundColor: 'white',
+    backgroundColor: '#f2732e',
     width: '100%',
     height: '100%',
     alignItems: 'center',
@@ -53,14 +100,24 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 250,
     height: 50,
-    borderWidth: 1,
+    //borderWidth: 1,
     borderRadius: 30,
+    backgroundColor: '#fefefe',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+
+    elevation: 2,
   },
   text: {color: 'white', fontWeight: 'bold', fontSize: 18},
 
   button: {
     margin: 30,
-    backgroundColor: '#FFC173',
+    backgroundColor: '#f2732e',
     borderRadius: 40,
     height: 50,
     width: 200,
