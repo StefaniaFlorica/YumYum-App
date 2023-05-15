@@ -43,7 +43,7 @@ export const RecipesScreen = (
   }, []);
 
   useEffect(() => {
-    console.log('page=', page.valueOf());
+    //console.log('page=', page.valueOf());
     fetchRecipes(page, search, difficulty, kcal).then((data: Recipe[]) => {
       if (data.length === 0) {
         // daca am ajuns la final, se va returna un array gol
@@ -91,12 +91,12 @@ export const RecipesScreen = (
   };
 
   useEffect(() => {
-    console.log('length:', recipes.length);
+   // console.log('length:', recipes.length);
   }, [recipes]);
 
   useEffect(() => {
     setPage(Number(1));
-    console.log('din home:', search, difficulty, kcal);
+    //console.log('din home:', search, difficulty, kcal);
   }, [search, difficulty, kcal]);
 
   const onSearchChange = (value: string) => {

@@ -16,39 +16,15 @@ interface Props {
 }
 
 export const RecipeListItem = (props: Props) => {
-  // const onHeartPressWrapper = () => {
-  //   console.log(props.data.name);
-  //   props.onHeartPress(props.data);
-  // };
-
   return (
     <View style={styles.main}>
       <View style={styles.card}>
         <Pressable
           style={styles.picContainer}
-          onPress={
-            // props.hasHeart
-            //    () => {
-            () => props.onCardPress(props.data)
-            //   }
-            // : () => {}
-          }>
+          onPress={() => props.onCardPress(props.data)}>
           <Image source={{uri: props.data.image}} style={styles.pic} />
         </Pressable>
         <View style={styles.detailsContainer}>
-          {/* {props.hasHeart ? (
-            <HeartFilledIcon
-              width={40}
-              height={40}
-              // position={'absolute'}
-              // top={36}
-              // left={90}
-              fill={'red'}
-              onPress={onHeartPressWrapper}
-            />
-          ) : (
-            <></>
-          )} */}
           <Text style={styles.title}>
             {props.data.name.charAt(0).toUpperCase() + props.data.name.slice(1)}
           </Text>

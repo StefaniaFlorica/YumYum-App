@@ -14,31 +14,28 @@ export const FavoritesScreen = () => {
 
   const onPress = (data: Recipe) => {
     if (!user) return;
-    console.debug(
-      'before:',
-      user.favoriteRecipes.map(item => item.name),
-      'to be deleted:',
-      data.name,
-    );
+    // console.debug(
+    //   'before:',
+    //   user.favoriteRecipes.map(item => item.name),
+    //   'to be deleted:',
+    //   data.name,
+    // );
     removeFromFavorites(user, data);
-    console.debug(
-      'after:',
-      user.favoriteRecipes.map(item => item.name),
-    );
+    // console.debug(
+    //   'after:',
+    //   user.favoriteRecipes.map(item => item.name),
+    // );
   };
 
-  console.log(
-    'current:',
-    user?.favoriteRecipes.map(item => item.name),
-  );
+  // console.log(
+  //   'current:',
+  //   user?.favoriteRecipes.map(item => item.name),
+  // );
 
   return (
-  //  <View style={styles.main}>
-      <FavoritesList
-        data={user?.favoriteRecipes}
-        onHeartPress={onPress}
-      />
- //   </View>
+    //  <View style={styles.main}>
+    <FavoritesList data={user?.favoriteRecipes} onHeartPress={onPress} />
+    //   </View>
   );
 };
 

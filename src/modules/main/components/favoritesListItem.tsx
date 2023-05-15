@@ -10,7 +10,7 @@ interface Props {
 
 export const FavoritesListItem = (props: Props) => {
   const onHeartPressWrapper = () => {
-    console.log(props.data.name);
+    //console.log(props.data.name);
     props.onHeartPress(props.data);
   };
 

@@ -45,7 +45,6 @@ export const EditInterestsScreen = () => {
               fill={'grey'}
               onPress={() => {
                 onXPress(interest);
-                console.log(interest);
               }}
             />
           </View>

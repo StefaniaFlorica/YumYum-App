@@ -18,6 +18,6 @@ export const getRecipes = async (
   //page=${page}&limit=4&search=${search}&difficulty=${difficulty}&kcal=${kcal}`
   //console.log({response});
   const json = await response.json();
-  console.log(url);
+  //console.log(url);
   return json;
 };

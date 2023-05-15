@@ -24,12 +24,12 @@ export const FilterModal = (props: Props) => {
   const [kcals, setKcals] = useState<IFilter[]>(initialKcals);
 
   useEffect(() => {
-    console.debug('din modal: ', difficulty, kcal);
+    //console.debug('din modal: ', difficulty, kcal);
     props.setFilters(difficulty, kcal);
   }, [difficulty, kcal]);
 
   useEffect(() => {
-    console.log('on useeff: ', difficulties);
+    //console.log('on useeff: ', difficulties);
   }, [JSON.stringify(difficulties)]);
 
   const toggleModal = () => {

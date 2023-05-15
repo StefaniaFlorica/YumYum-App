@@ -33,14 +33,18 @@ export const LoginForm = (props: Props) => {
       </View>
       <View style={styles.inputs}>
         <View style={styles.inputContainter}>
+          <Text style={styles.label}>Email:</Text>
           <TextInput
             placeholder="email"
+            placeholderTextColor={'#DCDCDC'}
             keyboardType="email-address"
             onChangeText={changeEmail}
             autoCapitalize="none"
             style={styles.input}></TextInput>
+          <Text style={styles.label}>Password:</Text>
           <TextInput
             placeholder="password"
+            placeholderTextColor={'#DCDCDC'}
             autoCapitalize="none"
             secureTextEntry={true}
             onChangeText={changePassword}
@@ -55,8 +59,14 @@ export const LoginForm = (props: Props) => {
 };
 
 const styles = StyleSheet.create({
+  label: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: -10,
+    marginLeft: 12,
+  },
   inputContainter: {
-    gap: 20,
+    gap: 16,
   },
   image: {
     width: 200,
@@ -77,11 +87,12 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 60,
     backgroundColor: '#f5f7f9',
     width: '100%',
-    paddingTop:30
+    paddingTop: 50,
+    //marginTop:-20
   },
   header: {
     paddingLeft: 20,
-    paddingBottom:30,
+    paddingBottom: 30,
     flex: 1,
     height: '100%',
     width: '100%',

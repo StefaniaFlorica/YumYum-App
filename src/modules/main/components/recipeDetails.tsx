@@ -36,8 +36,8 @@ export const RecipeDetails = (props: Props) => {
               props.data?.name.slice(1)}
           </Text>
           <HeartFilledIcon
-            width={40}
-            height={40}
+            width={48}
+            height={48}
             fill={props.heartColor}
             onPress={onPressWrapper}></HeartFilledIcon>
         </View>
@@ -55,13 +55,19 @@ export const RecipeDetails = (props: Props) => {
             <Text>{`${props.data.kcal} kcals`}</Text>
           </View>
         </View>
-        <Text style={styles.description}>{props.data?.description}</Text>
+        <Text style={styles.subtitle}>Intructions:</Text>
+        <Text style={styles.description}>{"\t\t"+props.data?.description}</Text>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  subtitle:{
+    fontSize:20,
+    fontWeight:'bold',
+    color:'#f2732e',
+  },
   description:{
     textAlign:'justify'
   },
@@ -94,7 +100,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   detailsContainer: {
-    width: '80%',
+    width: '85%',
     marginBottom: 20,
     flex: 2,
     justifyContent: 'space-evenly',
