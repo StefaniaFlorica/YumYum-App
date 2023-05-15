@@ -1,54 +1,40 @@
 import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import {Recipe} from '../types/recipe';
-import {
-  ChefIcon,
-  ClockIcon,
-  FlameIcon,
-  HeartFilledIcon,
-} from '../../../assets/icons';
+import {ChefIcon, ClockIcon, FlameIcon, HeartFilledIcon} from '../../../assets/icons';
 import {useState} from 'react';
 
 interface Props {
   data: Recipe;
-  onCardPress: (data: Recipe) => void;
-  // hasHeart?: boolean;
-  // onHeartPress: (data: Recipe) => void;
+  onHeartPress: (data: Recipe) => void;
 }
 
-export const RecipeListItem = (props: Props) => {
-  // const onHeartPressWrapper = () => {
-  //   console.log(props.data.name);
-  //   props.onHeartPress(props.data);
-  // };
+export const FavoritesListItem = (props: Props) => {
+  const onHeartPressWrapper = () => {
+    console.log(props.data.name);
+    props.onHeartPress(props.data);
+  };
 
   return (
     <View style={styles.main}>
       <View style={styles.card}>
-        <Pressable
-          style={styles.picContainer}
-          onPress={
-            // props.hasHeart
-            //    () => {
-            () => props.onCardPress(props.data)
-            //   }
-            // : () => {}
-          }>
+        <View style={styles.picContainer}>
           <Image source={{uri: props.data.image}} style={styles.pic} />
-        </Pressable>
+        </View>
         <View style={styles.detailsContainer}>
-          {/* {props.hasHeart ? (
-            <HeartFilledIcon
-              width={40}
-              height={40}
-              // position={'absolute'}
-              // top={36}
-              // left={90}
-              fill={'red'}
-              onPress={onHeartPressWrapper}
-            />
-          ) : (
-            <></>
-          )} */}
+          <HeartFilledIcon
+            width={52}
+            height={52}
+            position={'absolute'}
+            top={25}
+            left={90}
+            fill={'#f2732e'}
+            zIndex={2}
+            onPress={onHeartPressWrapper}
+          />
+          <Pressable onPress={onHeartPressWrapper} style={{zIndex:2}}>
+            <Text style={{position:'absolute', left:95, top:40,zIndex:2, fontSize:12, color:'white'}}> Unlike</Text>
+          </Pressable>
+          
           <Text style={styles.title}>
             {props.data.name.charAt(0).toUpperCase() + props.data.name.slice(1)}
           </Text>

@@ -7,7 +7,7 @@ import {RecipesScreen} from '../../screens/home';
 import {FavoritesScreen} from '../../screens/favorites';
 import {AccountScreen} from '../../screens/account';
 import {StyleSheet} from 'react-native';
-import { AccountIcon, HeartIcon, HomeIcon } from '../../../../assets/icons';
+import {AccountIcon, HeartIcon, HomeIcon} from '../../../../assets/icons';
 
 const Tab = createBottomTabNavigator<HomeTabBarRouteProps>();
 
@@ -23,39 +23,38 @@ export const HomeTabBarNavigator = () => {
         name={HomeTabBarRoutes.Home}
         component={RecipesScreen}
         options={{
-            tabBarIcon: ({focused}) => (
-              <HomeIcon
-                width={focused ? 30 : 25}
-                height={focused ? 30 : 25}
-                fill={focused ? 'black' : '#f2732e'}
-              />
-            ),
-          }}></Tab.Screen>
+          tabBarIcon: ({focused}) => (
+            <HomeIcon
+              width={focused ? 30 : 25}
+              height={focused ? 30 : 25}
+              fill={focused ? '#f2732e' : 'black'}
+            />
+          ),
+        }}></Tab.Screen>
       <Tab.Screen
         name={HomeTabBarRoutes.Favorites}
         component={FavoritesScreen}
         options={{
-            tabBarIcon: ({focused}) => (
-              <HeartIcon
-                width={focused ? 30 : 25}
-                height={focused ? 30 : 25}
-                fill={focused ? 'black' : '#f2732e'}
-              />
-            ),
-          }}
-        ></Tab.Screen>
+          tabBarIcon: ({focused}) => (
+            <HeartIcon
+              width={focused ? 30 : 25}
+              height={focused ? 30 : 25}
+              fill={focused ? '#f2732e' : 'black'}
+            />
+          ),
+        }}></Tab.Screen>
       <Tab.Screen
         name={HomeTabBarRoutes.Account}
         component={AccountScreen}
         options={{
-            tabBarIcon: ({focused}) => (
-              <AccountIcon
-                width={focused ? 30 : 25}
-                height={focused ? 30 : 25}
-                fill={focused ? 'black' : '#f2732e'}
-              />
-            ),
-          }}></Tab.Screen>
+          tabBarIcon: ({focused}) => (
+            <AccountIcon
+              width={focused ? 30 : 25}
+              height={focused ? 30 : 25}
+              fill={focused ? '#f2732e' : 'black'}
+            />
+          ),
+        }}></Tab.Screen>
     </Tab.Navigator>
   );
 };
@@ -70,7 +69,7 @@ const styles = StyleSheet.create({
     width: '70%',
     position: 'absolute',
     marginBottom: 20,
-    marginHorizontal:60,
+    marginHorizontal: 60,
     alignContent: 'center',
     shadowColor: '#000',
     shadowOffset: {

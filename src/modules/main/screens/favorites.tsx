@@ -33,12 +33,12 @@ export const FavoritesScreen = () => {
   );
 
   return (
-    <View style={styles.main}>
+  //  <View style={styles.main}>
       <FavoritesList
         data={user?.favoriteRecipes}
         onHeartPress={onPress}
       />
-    </View>
+ //   </View>
   );
 };
 

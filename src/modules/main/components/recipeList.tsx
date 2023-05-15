@@ -22,7 +22,7 @@ interface Props {
 
 export const RecipeList = (props: Props) => {
   const renderItem = useCallback(({item}: ListRenderItemInfo<Recipe>) => (
-    <RecipeListItem data={item} onCardPress={props.onCardPress} onHeartPress={()=>{}}/>
+    <RecipeListItem data={item} onCardPress={props.onCardPress}/>
   ),[]);
   return (
     // <View style={styles.container}>

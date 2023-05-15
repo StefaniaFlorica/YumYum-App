@@ -37,3 +37,12 @@ export {FilterIcon}
 import CloseIcon from './close-outline.svg'
 export {CloseIcon}
 
+import ClockIcon from './clock-outline.svg'
+export {ClockIcon}
+
+import FlameIcon from './flame.svg'
+export {FlameIcon}
+
+import ChefIcon from './chef-hat.svg'
+export {ChefIcon}
+
