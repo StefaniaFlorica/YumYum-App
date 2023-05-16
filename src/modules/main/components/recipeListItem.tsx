@@ -11,19 +11,18 @@ import {useState} from 'react';
 interface Props {
   data: Recipe;
   onCardPress: (data: Recipe) => void;
-  // hasHeart?: boolean;
-  // onHeartPress: (data: Recipe) => void;
 }
 
 export const RecipeListItem = (props: Props) => {
+  const onCardPressWrapper = () => {
+    props.onCardPress(props.data);
+  };
   return (
     <View style={styles.main}>
-      <View style={styles.card}>
-        <Pressable
-          style={styles.picContainer}
-          onPress={() => props.onCardPress(props.data)}>
+      <Pressable style={styles.card} onPress={onCardPressWrapper}>
+        <View style={styles.picContainer}>
           <Image source={{uri: props.data.image}} style={styles.pic} />
-        </Pressable>
+        </View>
         <View style={styles.detailsContainer}>
           <Text style={styles.title}>
             {props.data.name.charAt(0).toUpperCase() + props.data.name.slice(1)}
@@ -43,7 +42,7 @@ export const RecipeListItem = (props: Props) => {
             </View>
           </View>
         </View>
-      </View>
+      </Pressable>
     </View>
   );
 };

@@ -46,3 +46,12 @@ export {FlameIcon}
 import ChefIcon from './chef-hat.svg'
 export {ChefIcon}
 
+import HeartLine from './heart2.svg'
+export {HeartLine}
+
+import HeartSlash from './heart-slashh.svg'
+export {HeartSlash}
+
+import HeartX from './heart-x.svg'
+export {HeartX}
+

@@ -1,6 +1,15 @@
 import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import {Recipe} from '../types/recipe';
-import {ChefIcon, ClockIcon, FlameIcon, HeartFilledIcon} from '../../../assets/icons';
+import {
+  ChefIcon,
+  ClockIcon,
+  FlameIcon,
+  HeartFilledIcon,
+  HeartIcon,
+  HeartLine,
+  HeartSlash,
+  HeartX,
+} from '../../../assets/icons';
 import {useState} from 'react';
 
 interface Props {
@@ -21,20 +30,20 @@ export const FavoritesListItem = (props: Props) => {
           <Image source={{uri: props.data.image}} style={styles.pic} />
         </View>
         <View style={styles.detailsContainer}>
-          <HeartFilledIcon
-            width={52}
-            height={52}
+          <HeartSlash
+            width={58}
+            height={58}
             position={'absolute'}
-            top={25}
+            top={20}
             left={90}
             fill={'#f2732e'}
             zIndex={2}
             onPress={onHeartPressWrapper}
           />
-          <Pressable onPress={onHeartPressWrapper} style={{zIndex:2}}>
-            <Text style={{position:'absolute', left:95, top:40,zIndex:2, fontSize:12, color:'white'}}> Unlike</Text>
-          </Pressable>
-          
+          {/* <Pressable onPress={onHeartPressWrapper} style={{zIndex: 2}}>
+            <Text style={styles.unlikeLabel}> Unlike</Text>
+          </Pressable> */}
+
           <Text style={styles.title}>
             {props.data.name.charAt(0).toUpperCase() + props.data.name.slice(1)}
           </Text>
@@ -59,6 +68,14 @@ export const FavoritesListItem = (props: Props) => {
 };
 
 const styles = StyleSheet.create({
+  unlikeLabel: {
+    position: 'absolute',
+    left: 96,
+    top: 40,
+    zIndex: 2,
+    fontSize: 12,
+    color: 'white',
+  },
   pair: {
     flexDirection: 'row',
     gap: 4,
@@ -113,8 +130,8 @@ const styles = StyleSheet.create({
   card: {
     flexDirection: 'row',
     marginTop: 40,
-    width: 270,
-    height: 150,
+    width: 280,
+    height: 180,
     backgroundColor: '#fefefe',
     justifyContent: 'space-evenly',
     alignItems: 'center',

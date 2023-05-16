@@ -3,7 +3,7 @@ import {User} from '../../auth/types/user';
 import {Image} from 'react-native';
 
 interface Props {
-  user: User | null;
+  user: User|null;
 }
 
 export const Avatar = (props: Props) => {

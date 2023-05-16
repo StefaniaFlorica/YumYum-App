@@ -75,22 +75,34 @@ export const EditUserScreen = () => {
         <View style={styles.fields}>
           <Text style={styles.editTitle}>Email:</Text>
           <TextInput
-            style={[styles.input,{borderBottomColor:(isEmailFocused?"#f2732e":"grey")}]}
+            style={[
+              styles.input,
+              {borderBottomColor: isEmailFocused ? '#f2732e' : 'grey'},
+            ]}
             value={email}
             onChangeText={changeEmail}
-            onFocus={()=>{setIsEmailFocused(true)}}
-            onBlur={()=>{setIsEmailFocused(false)}}
-            ></TextInput>
+            onFocus={() => {
+              setIsEmailFocused(true);
+            }}
+            onBlur={() => {
+              setIsEmailFocused(false);
+            }}></TextInput>
         </View>
         <View style={styles.fields}>
           <Text style={styles.editTitle}>Username:</Text>
           <TextInput
-            style={[styles.input,{borderBottomColor:(isUsernameFocused?"#f2732e":"grey")}]}
+            style={[
+              styles.input,
+              {borderBottomColor: isUsernameFocused ? '#f2732e' : 'grey'},
+            ]}
             value={username}
             onChangeText={changeUsename}
-            onFocus={()=>{setIsUsernameFocused(true)}}
-            onBlur={()=>{setIsUsernameFocused(false)}}
-            ></TextInput>
+            onFocus={() => {
+              setIsUsernameFocused(true);
+            }}
+            onBlur={() => {
+              setIsUsernameFocused(false);
+            }}></TextInput>
         </View>
         <View style={styles.fields}>
           <Text style={styles.editTitle}>Food Preferences: </Text>
@@ -103,16 +115,24 @@ export const EditUserScreen = () => {
           </Pressable>
         </View>
       </View>
-      <Pressable style={styles.button} onPress={onPressEdit}>
-        <Text style={styles.text}>Edit Food Preferences</Text>
-      </Pressable>
-      <Pressable style={styles.button} onPress={onPress}>
-        <Text style={styles.text}>Save</Text>
-      </Pressable>
+      <View style={styles.buttonsContainer}>
+        <Pressable style={styles.button} onPress={onPressEdit}>
+          <Text style={styles.text}>Edit Food Preferences</Text>
+        </Pressable>
+        <Pressable style={styles.button} onPress={onPress}>
+          <Text style={styles.text}>Save</Text>
+        </Pressable>
+      </View>
     </View>
   );
 };
 const styles = StyleSheet.create({
+  buttonsContainer: {
+    padding: 12,
+    marginBottom: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   row: {flexDirection: 'row'},
   editTitle: {
     fontWeight: 'bold',
@@ -140,10 +160,11 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   button: {
-    margin: 30,
+    margin: 20,
+    gap: 10,
     backgroundColor: '#f2732e',
-    borderRadius: 20,
-    height: 40,
+    borderRadius: 25,
+    height: 50,
     width: 150,
     alignItems: 'center',
     justifyContent: 'center',
@@ -192,7 +213,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 40,
     borderBottomWidth: 1,
-    borderColor:'grey'
+    borderColor: 'grey',
     //borderRadius: 30,
   },
 });

@@ -5,13 +5,29 @@ import {TextInput} from 'react-native-gesture-handler';
 interface Props {
   onLogin: (email: string, password: string) => void;
 }
+interface InputErrors {
+  emailError: boolean;
+  passwordError: boolean;
+}
 
 export const LoginForm = (props: Props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState<InputErrors>({
+    emailError: false,
+    passwordError: false,
+  });
   const yumYum = require('../../../assets/images/yum-yum.png');
   const onPress = () => {
-    props.onLogin(email, password);
+    if (email !== '' && password !== '') {
+      setErrors({emailError: false, passwordError: false});
+      props.onLogin(email, password);
+    } else {
+      setErrors({
+        emailError: email === '' ? true : false,
+        passwordError: password === '' ? true : false,
+      });
+    }
   };
   const changeEmail = (email: string) => {
     setEmail(email);
@@ -33,6 +49,11 @@ export const LoginForm = (props: Props) => {
       </View>
       <View style={styles.inputs}>
         <View style={styles.inputContainter}>
+          {errors.emailError || errors.passwordError ? (
+            <Text style={styles.errorMessage}>Please check your credentials!</Text>
+          ) : (
+            <></>
+          )}
           <Text style={styles.label}>Email:</Text>
           <TextInput
             placeholder="email"
@@ -40,7 +61,10 @@ export const LoginForm = (props: Props) => {
             keyboardType="email-address"
             onChangeText={changeEmail}
             autoCapitalize="none"
-            style={styles.input}></TextInput>
+            style={[
+              styles.input,
+              errors.emailError ? {borderWidth: 1, borderColor: '#ae0000'} : {},
+            ]}></TextInput>
           <Text style={styles.label}>Password:</Text>
           <TextInput
             placeholder="password"
@@ -48,8 +72,13 @@ export const LoginForm = (props: Props) => {
             autoCapitalize="none"
             secureTextEntry={true}
             onChangeText={changePassword}
-            style={styles.input}></TextInput>
-          <Pressable style={styles.button} onPress={onPress}>
+            style={[
+              styles.input,
+              errors.passwordError
+                ? {borderWidth: 1, borderColor: '#ae0000'}
+                : {},
+            ]}></TextInput>
+          <Pressable style={styles.button} onPress={onPress} >
             <Text style={styles.text}>Log in</Text>
           </Pressable>
         </View>
@@ -59,6 +88,7 @@ export const LoginForm = (props: Props) => {
 };
 
 const styles = StyleSheet.create({
+  errorMessage: {textAlign: 'center', color: '#ae0000'},
   label: {
     fontSize: 20,
     fontWeight: 'bold',
