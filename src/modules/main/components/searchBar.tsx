@@ -9,7 +9,6 @@ export const SearchBar = (props: Props) => {
   const [searchState, setSearchState] = useState('');
   const searchVal = useDebounce<string>(searchState, 1000);
   useEffect(() => {
-    // console.log(searchVal);
     props.onSearchChange(searchVal[0].trim());
   }, [searchVal]);
   return (
@@ -45,14 +44,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   input: {
-    // marginTop: 10,
-    // padding: 10,
     width: 200,
     height: 40,
-    // borderRadius: 30,
-    // backgroundColor: 'white',
-    // color: 'grey',
-    // borderWidth: 1,
-    // borderColor: 'grey',
   },
 });

@@ -46,10 +46,6 @@ export const RecipeDetailsScreen = (
     }
   };
 
-  useEffect(()=>{
-    //console.log("from details:", user?.favoriteRecipes.map((item)=> item.name));
-  },[user?.favoriteRecipes])
-
   return (
     <View>
       <RecipeDetails

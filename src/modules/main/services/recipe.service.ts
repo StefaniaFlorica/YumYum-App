@@ -15,9 +15,6 @@ export const getRecipes = async (
     url += `&kcal=${kcal}`;
   }
   const response = await fetch(url);
-  //page=${page}&limit=4&search=${search}&difficulty=${difficulty}&kcal=${kcal}`
-  //console.log({response});
   const json = await response.json();
-  //console.log(url);
   return json;
 };

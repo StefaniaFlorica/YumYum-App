@@ -7,7 +7,7 @@ import {HomeTabBarNavigator} from './home-tab-bar-navigator';
 import {Image, Pressable, StyleSheet} from 'react-native';
 import {EditUserScreen} from '../../screens/editUser';
 import {RecipeDetailsScreen} from '../../screens/details';
-import { EditInterestsScreen } from '../../screens/editInterests';
+import {EditInterestsScreen} from '../../screens/editInterests';
 
 const Stack = createStackNavigator<MainNavigatorRouteProps>();
 
@@ -30,10 +30,7 @@ export const MainNavigator = () => {
       <Stack.Screen
         name={MainNavigatorRoutes.Edit}
         component={EditUserScreen}
-        options={() => ({
-          // headerLeft: ()=> (
-          // )
-        })}></Stack.Screen>
+        options={() => ({})}></Stack.Screen>
       <Stack.Screen
         name={MainNavigatorRoutes.RecipeDetails}
         component={RecipeDetailsScreen}></Stack.Screen>

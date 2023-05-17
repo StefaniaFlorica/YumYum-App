@@ -71,8 +71,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   bubble: {
-    //width: 50,
-    //height: 40,
     padding: 8,
     justifyContent: 'center',
     alignItems: 'center',
@@ -94,15 +92,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   interests: {
-    //width: 300,
-    //flex: 2,
-    //backgroundColor: 'pink',
     gap: 8,
     justifyContent: 'center',
     alignItems: 'flex-start',
   },
   add: {
-    //width: 50,
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
@@ -119,7 +113,6 @@ const styles = StyleSheet.create({
   },
   addButtonText: {
     fontSize: 30,
-    //fontWeight: 'Fbold',
     color: 'white',
     textAlign: 'center',
   },
@@ -127,18 +120,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    //backgroundColor: 'lightblue',
     gap: 8,
-    //flex: 1,
   },
   input: {
-    // marginTop: 10,
     padding: 10,
     width: 250,
     height: 50,
     borderRadius: 30,
     backgroundColor: 'white',
-    // color: 'grey',
     borderWidth: 1,
     borderColor: '#dcdcdc',
     shadowColor: '#000',
@@ -148,7 +137,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
     elevation: 5,
   },
   main: {

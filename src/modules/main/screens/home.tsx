@@ -43,7 +43,6 @@ export const RecipesScreen = (
   }, []);
 
   useEffect(() => {
-    //console.log('page=', page.valueOf());
     fetchRecipes(page, search, difficulty, kcal).then((data: Recipe[]) => {
       if (data.length === 0) {
         // daca am ajuns la final, se va returna un array gol
@@ -112,16 +111,10 @@ export const RecipesScreen = (
   const onPressNavigate = (
     data: MainNavigatorRouteProps[MainNavigatorRoutes.RecipeDetails],
   ) => {
-    //console.log("fdsfsd")
     props.navigation.navigate(MainNavigatorRoutes.RecipeDetails, data);
   };
   return (
     <View style={styles.main}>
-      {/* <Text style={styles.title}>{HomeTabBarRoutes.Home}</Text>
-      <Pressable style={styles.button} onPress={toggleModal}>
-        <Text>Modal</Text>
-      </Pressable>
-       */}
       <View style={styles.bar}>
         <SearchBar onSearchChange={onSearchChange}></SearchBar>
         <FilterModal setFilters={onFilterPress} />

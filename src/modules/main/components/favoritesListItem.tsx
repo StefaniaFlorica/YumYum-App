@@ -1,16 +1,12 @@
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {Recipe} from '../types/recipe';
 import {
   ChefIcon,
   ClockIcon,
   FlameIcon,
-  HeartFilledIcon,
-  HeartIcon,
-  HeartLine,
   HeartSlash,
-  HeartX,
 } from '../../../assets/icons';
-import {useState} from 'react';
+import FastImage from 'react-native-fast-image';
 
 interface Props {
   data: Recipe;
@@ -19,7 +15,6 @@ interface Props {
 
 export const FavoritesListItem = (props: Props) => {
   const onHeartPressWrapper = () => {
-    //console.log(props.data.name);
     props.onHeartPress(props.data);
   };
 
@@ -27,7 +22,7 @@ export const FavoritesListItem = (props: Props) => {
     <View style={styles.main}>
       <View style={styles.card}>
         <View style={styles.picContainer}>
-          <Image source={{uri: props.data.image}} style={styles.pic} />
+          <FastImage source={{uri: props.data.image}} style={styles.pic} />
         </View>
         <View style={styles.detailsContainer}>
           <HeartSlash
@@ -40,10 +35,6 @@ export const FavoritesListItem = (props: Props) => {
             zIndex={2}
             onPress={onHeartPressWrapper}
           />
-          {/* <Pressable onPress={onHeartPressWrapper} style={{zIndex: 2}}>
-            <Text style={styles.unlikeLabel}> Unlike</Text>
-          </Pressable> */}
-
           <Text style={styles.title}>
             {props.data.name.charAt(0).toUpperCase() + props.data.name.slice(1)}
           </Text>

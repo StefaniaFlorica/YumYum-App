@@ -114,7 +114,6 @@ const styles = StyleSheet.create({
   },
   fields: {
     padding: 20,
-    //borderWidth:1,
     width: '100%',
     gap:4
   },

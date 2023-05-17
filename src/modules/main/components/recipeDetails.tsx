@@ -2,15 +2,12 @@ import {View, StyleSheet, Image} from 'react-native';
 import {Recipe} from '../types/recipe';
 import {Text} from 'react-native';
 import {
-  AccountIcon,
   ChefIcon,
   ClockIcon,
   FlameIcon,
   HeartFilledIcon,
-  HeartIcon,
 } from '../../../assets/icons';
-import {UserState, useAuthStore} from '../../auth/store/useAuthStore';
-import {useEffect, useState} from 'react';
+import FastImage from 'react-native-fast-image';
 
 interface Props {
   data: Recipe;
@@ -26,7 +23,7 @@ export const RecipeDetails = (props: Props) => {
     <View style={styles.main}>
       <View style={styles.container}>
         <View style={styles.imageContainer}>
-          <Image source={{uri: props.data.image}} style={styles.image}></Image>
+          <FastImage source={{uri: props.data.image}} style={styles.image}></FastImage>
         </View>
       </View>
       <View style={styles.detailsContainer}>

@@ -155,7 +155,6 @@ const styles = StyleSheet.create({
   },
   fields: {
     padding: 20,
-    //borderWidth:1,
     width: '100%',
     gap: 4,
   },
@@ -197,11 +196,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   main: {
-    // backgroundColor: 'white',
-    // width: '100%',
-    // height: '100%',
-    // alignItems: 'center',
-    // justifyContent: 'space-between',
     justifyContent: 'space-between',
     alignItems: 'center',
     flex: 1,
@@ -214,6 +208,5 @@ const styles = StyleSheet.create({
     height: 40,
     borderBottomWidth: 1,
     borderColor: 'grey',
-    //borderRadius: 30,
   },
 });

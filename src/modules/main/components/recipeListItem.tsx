@@ -4,9 +4,8 @@ import {
   ChefIcon,
   ClockIcon,
   FlameIcon,
-  HeartFilledIcon,
 } from '../../../assets/icons';
-import {useState} from 'react';
+import FastImage from 'react-native-fast-image';
 
 interface Props {
   data: Recipe;
@@ -21,7 +20,7 @@ export const RecipeListItem = (props: Props) => {
     <View style={styles.main}>
       <Pressable style={styles.card} onPress={onCardPressWrapper}>
         <View style={styles.picContainer}>
-          <Image source={{uri: props.data.image}} style={styles.pic} />
+          <FastImage source={{uri: props.data.image}} style={styles.pic} />
         </View>
         <View style={styles.detailsContainer}>
           <Text style={styles.title}>
