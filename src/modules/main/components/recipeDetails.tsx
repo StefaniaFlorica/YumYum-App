@@ -8,7 +8,7 @@ import {
   HeartFilledIcon,
 } from '../../../assets/icons';
 import FastImage from 'react-native-fast-image';
-
+import Animated, {BounceIn,BounceOut} from 'react-native-reanimated';
 interface Props {
   data: Recipe;
   heartColor: string;
@@ -23,7 +23,9 @@ export const RecipeDetails = (props: Props) => {
     <View style={styles.main}>
       <View style={styles.container}>
         <View style={styles.imageContainer}>
-          <FastImage source={{uri: props.data.image}} style={styles.image}></FastImage>
+          <FastImage
+            source={{uri: props.data.image}}
+            style={styles.image}></FastImage>
         </View>
       </View>
       <View style={styles.detailsContainer}>
@@ -32,11 +34,24 @@ export const RecipeDetails = (props: Props) => {
             {props.data?.name.charAt(0).toUpperCase() +
               props.data?.name.slice(1)}
           </Text>
-          <HeartFilledIcon
-            width={48}
-            height={48}
-            fill={props.heartColor}
-            onPress={onPressWrapper}></HeartFilledIcon>
+
+          {props.heartColor === 'red' ? (
+            <Animated.View key={1} entering={BounceIn} >
+              <HeartFilledIcon
+                width={48}
+                height={48}
+                fill={'red'}
+                onPress={onPressWrapper}></HeartFilledIcon>
+            </Animated.View>
+          ) : (
+            <Animated.View key={2} entering={BounceIn} >
+              <HeartFilledIcon
+                width={48}
+                height={48}
+                fill={'black'}
+                onPress={onPressWrapper}></HeartFilledIcon>
+            </Animated.View>
+          )}
         </View>
         <View style={styles.pair}>
           <ChefIcon width={20} height={20} />
@@ -53,20 +68,22 @@ export const RecipeDetails = (props: Props) => {
           </View>
         </View>
         <Text style={styles.subtitle}>Intructions:</Text>
-        <Text style={styles.description}>{"\t\t"+props.data?.description}</Text>
+        <Text style={styles.description}>
+          {'\t\t' + props.data?.description}
+        </Text>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  subtitle:{
-    fontSize:20,
-    fontWeight:'bold',
-    color:'#f2732e',
+  subtitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#f2732e',
   },
-  description:{
-    textAlign:'justify'
+  description: {
+    textAlign: 'justify',
   },
   pair: {
     flexDirection: 'row',
@@ -107,6 +124,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     //borderRadius: 180,
+    backgroundColor: 'white',
+    borderBottomLeftRadius: 60,
+    borderBottomRightRadius: 60,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -121,8 +141,8 @@ const styles = StyleSheet.create({
     height: '100%',
     //resizeMode: 'cover',
     //borderRadius: 180,
-    borderBottomLeftRadius: 28,
-    borderBottomRightRadius: 28,
+    borderBottomLeftRadius: 60,
+    borderBottomRightRadius: 60,
   },
   main: {
     width: '100%',

@@ -13,7 +13,7 @@ export const SearchBar = (props: Props) => {
   }, [searchVal]);
   return (
     <View style={styles.container}>
-      <TextInput style={styles.input} onChangeText={setSearchState}>
+      <TextInput autoCapitalize="none" placeholder='type a keyword...' style={styles.input} onChangeText={setSearchState}>
         {' '}
       </TextInput>
       <SearchIcon height={20} width={20} fill="#f2732e" />

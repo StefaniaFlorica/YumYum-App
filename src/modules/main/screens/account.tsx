@@ -30,7 +30,6 @@ export const AccountScreen = (
     <View style={styles.main}>
       <View style={styles.header}>
         <Text style={styles.title}>{`Hi, ${user?.username}!`}</Text>
-        
       </View>
       <Pressable>
         <Avatar user={user}></Avatar>
@@ -97,6 +96,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+    zIndex:3
   },
   info: {
     borderRadius: 20,

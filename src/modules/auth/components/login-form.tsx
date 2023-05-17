@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
     height: 200,
     resizeMode: 'contain',
     tintColor: 'white',
+    marginTop:20
   },
   title: {
     color: '#f5f7f9',

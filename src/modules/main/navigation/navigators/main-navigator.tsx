@@ -8,6 +8,7 @@ import {Image, Pressable, StyleSheet} from 'react-native';
 import {EditUserScreen} from '../../screens/editUser';
 import {RecipeDetailsScreen} from '../../screens/details';
 import {EditInterestsScreen} from '../../screens/editInterests';
+import {BackIcon} from '../../../../assets/icons';
 
 const Stack = createStackNavigator<MainNavigatorRouteProps>();
 
@@ -30,13 +31,45 @@ export const MainNavigator = () => {
       <Stack.Screen
         name={MainNavigatorRoutes.Edit}
         component={EditUserScreen}
-        options={() => ({})}></Stack.Screen>
+        options={({navigation, route}) => ({
+          headerLeft: () => (
+            <BackIcon
+              width={30}
+              height={30}
+              marginLeft={20}
+              fill={'#f2732e'}
+              onPress={() => navigation.goBack()}
+            />
+          ),
+        })}></Stack.Screen>
       <Stack.Screen
         name={MainNavigatorRoutes.RecipeDetails}
-        component={RecipeDetailsScreen}></Stack.Screen>
+        component={RecipeDetailsScreen}
+        options={({navigation, route}) => ({
+          headerLeft: () => (
+            <BackIcon
+              width={30}
+              height={30}
+              marginLeft={20}
+              fill={'#f2732e'}
+              onPress={() => navigation.goBack()}
+            />
+          ),
+        })}></Stack.Screen>
       <Stack.Screen
         name={MainNavigatorRoutes.Interests}
-        component={EditInterestsScreen}></Stack.Screen>
+        component={EditInterestsScreen}
+        options={({navigation, route}) => ({
+          headerLeft: () => (
+            <BackIcon
+              width={30}
+              height={30}
+              marginLeft={20}
+              fill={'#f2732e'}
+              onPress={() => navigation.goBack()}
+            />
+          ),
+        })}></Stack.Screen>
     </Stack.Navigator>
   );
 };

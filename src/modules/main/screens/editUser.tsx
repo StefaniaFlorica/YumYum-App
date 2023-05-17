@@ -1,5 +1,5 @@
 import {Pressable, StyleSheet, Text, View} from 'react-native';
-import {TextInput} from 'react-native-gesture-handler';
+import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import {UserState, useAuthStore} from '../../auth/store/useAuthStore';
 import {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
@@ -49,18 +49,24 @@ export const EditUserScreen = () => {
 
   const onPicPress = async () => {
     if (!user) return;
-    const image = await ImagePicker.openPicker({
-      width: 100,
-      height: 100,
-      cropping: true,
-      includeBase64: true,
-      mediaType: 'photo',
-    });
-    setProfilePicture(`data:${image.mime};base64,${image.data}`);
+    let image;
+    try {
+      image = await ImagePicker.openPicker({
+        width: 100,
+        height: 100,
+        cropping: true,
+        includeBase64: true,
+        mediaType: 'photo',
+      });
+    } catch (e) {
+      console.log(e);
+    }
+
+    setProfilePicture(`data:${image?.mime};base64,${image?.data}`);
   };
 
   return (
-    <View style={styles.main}>
+    <ScrollView style={styles.main} contentContainerStyle={styles.mainContent}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Edit info</Text>
       </View>
@@ -123,7 +129,7 @@ export const EditUserScreen = () => {
           <Text style={styles.text}>Save</Text>
         </Pressable>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 const styles = StyleSheet.create({
@@ -140,6 +146,7 @@ const styles = StyleSheet.create({
     color: '#f2732e',
   },
   info: {
+    margin: 10,
     borderRadius: 20,
     width: '80%',
     backgroundColor: '#fefefe',
@@ -182,6 +189,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
+    margin:20,
     fontSize: 30,
     fontWeight: 'bold',
     marginTop: 10,
@@ -195,9 +203,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
   },
+  mainContent: {justifyContent: 'space-between', alignItems: 'center'},
   main: {
-    justifyContent: 'space-between',
-    alignItems: 'center',
     flex: 1,
     backgroundColor: '#f5f7f9',
     gap: 8,

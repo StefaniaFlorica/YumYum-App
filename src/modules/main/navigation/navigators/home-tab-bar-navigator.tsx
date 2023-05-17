@@ -61,6 +61,8 @@ export const HomeTabBarNavigator = () => {
 
 const styles = StyleSheet.create({
   customBottomTab: {
+    padding:20,
+    //marginTop:20,
     justifyContent: 'center',
     alignItems: 'center',
     height: 50,
